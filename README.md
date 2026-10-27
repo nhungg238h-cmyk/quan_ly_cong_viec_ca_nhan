@@ -1,4 +1,4 @@
-# Quản lý công việc cá nhân - Laravel Clean Architecture
+# Ứng dụng Quản lý công việc cá nhân - Laravel Clean Architecture
 
 Ứng dụng web quản lý công việc cá nhân, xây dựng bằng **Laravel 12 (PHP 8.2) + MySQL**, giao diện **HTML/CSS/JS** thuần, tổ chức theo **Clean Architecture**.
 
@@ -155,3 +155,10 @@ php artisan test
 Chạy trên MySQL thật: `DB_CONNECTION=mysql DB_DATABASE=quan_ly_cong_viec_test php vendor/bin/phpunit`
 
 GitHub Actions (`.github/workflows/ci.yml`, job `build`) tự chạy test cho mọi Pull Request vào `main`. Quy tắc làm việc nhóm: xem [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Nhóm thực hiện
+
+| Thành viên | Vai trò | Phụ trách |
+|---|---|---|
+| [@nhungg238h-cmyk](https://github.com/nhungg238h-cmyk) | Trưởng nhóm | Cấu hình repo và CI, tầng Data, trang công việc, README |
+| [@nguyenminhkhue12102005-collab](https://github.com/nguyenminhkhue12102005-collab) | Thành viên | Tầng Domain, đăng ký / đăng nhập, lịch sử và hồ sơ |
