@@ -32,6 +32,6 @@ class TaskServiceProvider extends ServiceProvider
     public function boot(): void
     {
         // Các trang sau đăng nhập (và layout của chúng) đều cần biết người dùng hiện tại.
-        View::composer(['layouts.app', 'home'], CurrentUserComposer::class);
+        View::composer(['layouts.app', 'tasks.*'], CurrentUserComposer::class);
     }
 }
