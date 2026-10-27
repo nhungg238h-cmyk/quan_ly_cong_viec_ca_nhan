@@ -9,12 +9,13 @@
             <div class="topbar__links">
                 <a href="{{ route('tasks.page') }}" @class(['topbar__link', 'is-active' => request()->routeIs('tasks.page')])>Công việc</a>
                 <a href="{{ route('history') }}" @class(['topbar__link', 'is-active' => request()->routeIs('history')])>Lịch sử</a>
+                <a href="{{ route('profile') }}" @class(['topbar__link', 'topbar__link--profile', 'is-active' => request()->routeIs('profile')])>Hồ sơ</a>
             </div>
             <div class="topbar__user">
-                <span class="topbar__me" title="{{ $currentUser['email'] }}">
+                <a href="{{ route('profile') }}" class="topbar__me" title="{{ $currentUser['email'] }}">
                     @include('partials.avatar', ['user' => $currentUser, 'size' => 'sm'])
                     <span class="topbar__name">{{ $currentUser['name'] }}</span>
-                </span>
+                </a>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button type="submit" class="btn btn--ghost btn--sm topbar__logout" title="Đăng xuất">
