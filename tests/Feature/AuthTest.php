@@ -15,6 +15,8 @@ class AuthTest extends TestCase
     public function test_guests_are_redirected_to_login(): void
     {
         $this->get('/')->assertRedirect('/login');
+        $this->getJson('/api/tasks')->assertUnauthorized();
+        $this->postJson('/api/tasks', ['title' => 'x'])->assertUnauthorized();
     }
 
     public function test_login_page_shows_demo_accounts(): void
@@ -98,7 +100,7 @@ class AuthTest extends TestCase
         $this->get('/register')->assertRedirect('/');
     }
 
-    public function test_seeded_demo_accounts_can_log_in(): void
+    public function test_seeded_demo_accounts_can_log_in_and_have_sample_tasks(): void
     {
         $this->seed(DatabaseSeeder::class);
 
@@ -106,6 +108,7 @@ class AuthTest extends TestCase
             $this->post('/login', ['email' => $account['email'], 'password' => $account['password']])->assertRedirect('/');
             $this->assertAuthenticated();
 
+            $this->getJson('/api/tasks')->assertOk()->assertJsonCount(count($account['tasks']), 'data');
 
             $this->post('/logout');
         }
