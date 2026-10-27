@@ -153,4 +153,4 @@ php artisan test
 
 Chạy trên MySQL thật: `DB_CONNECTION=mysql DB_DATABASE=quan_ly_cong_viec_test php vendor/bin/phpunit`
 
-GitHub Actions (`.github/workflows/tests.yml`) tự chạy test mỗi lần push / pull request.
+GitHub Actions (`.github/workflows/ci.yml`, job `build`) tự chạy test cho mọi Pull Request vào `main`. Quy tắc làm việc nhóm: xem [CONTRIBUTING.md](CONTRIBUTING.md).
