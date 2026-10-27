@@ -1,0 +1,3 @@
+# Người review mặc định cho mọi file. GitHub tự gửi yêu cầu review cho những người
+# được ghi ở đây (trừ tác giả PR).
+* @nhungg238h-cmyk @nguyenminhkhue12102005-collab
