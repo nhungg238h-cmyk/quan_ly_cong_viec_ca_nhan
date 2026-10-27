@@ -2,6 +2,7 @@
 
 use App\Presentation\Http\Controllers\Auth\LoginController;
 use App\Presentation\Http\Controllers\Auth\RegisterController;
+use App\Presentation\Http\Controllers\HistoryController;
 use App\Presentation\Http\Controllers\TaskController;
 use App\Presentation\Http\Controllers\TaskImageController;
 use App\Presentation\Http\Controllers\TaskPageController;
@@ -18,6 +19,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/logout', [LoginController::class, 'destroy'])->name('logout');
 
     Route::get('/', TaskPageController::class)->name('tasks.page');
+    Route::get('/history', HistoryController::class)->name('history');
     Route::get('/tasks/{id}/image', TaskImageController::class)->whereNumber('id')->name('tasks.image');
 
 

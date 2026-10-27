@@ -8,6 +8,7 @@
             </a>
             <div class="topbar__links">
                 <a href="{{ route('tasks.page') }}" @class(['topbar__link', 'is-active' => request()->routeIs('tasks.page')])>Công việc</a>
+                <a href="{{ route('history') }}" @class(['topbar__link', 'is-active' => request()->routeIs('history')])>Lịch sử</a>
             </div>
             <div class="topbar__user">
                 <span class="topbar__me" title="{{ $currentUser['email'] }}">
