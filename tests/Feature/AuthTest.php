@@ -15,6 +15,7 @@ class AuthTest extends TestCase
     public function test_guests_are_redirected_to_login(): void
     {
         $this->get('/')->assertRedirect('/login');
+        $this->get('/history')->assertRedirect('/login');
         $this->getJson('/api/tasks')->assertUnauthorized();
         $this->postJson('/api/tasks', ['title' => 'x'])->assertUnauthorized();
     }
